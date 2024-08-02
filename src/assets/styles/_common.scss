@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$white:#ffffff;
+$card-bg: #f3f6f9;
+$primary-color: #405189;
+$primary-hover: #364574;
+$button-bg: #adb5bd;
+$primary-text: #343a40;
+$border-color:#ced4da;
+$light-bg:#efefef;
+
+/* global css start */
+
+body{
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    background-color: $light-bg;
+}
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+
+.d-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    &.justify-content-start{
+        justify-content: flex-start;
+    }
+    &.align-items-center{
+        align-items: center;
+    }
+}
+
+.mr-2{
+    margin-right: 15px;
+}
+
+.ml-2{
+    margin-left: 15px;
+}
+
+.mb-2{
+    margin-bottom: 15px;
+}
+
+.primary-btn{
+    background-color:$primary-color;
+    color: $white;
+    cursor: pointer;
+    border: 1px solid $primary-color;
+    padding: 9px 10px;
+    font-size: 0.825rem;
+    min-width: 85px;
+    text-align: center;
+    border-radius: 3px;
+    &:hover,&:focus,&:active{
+        border: 1px solid $primary-color;
+        background-color: $primary-hover;
+        outline: none;
+    }
+}
+
+button{
+    border-radius: 3px;
+    background-color: $light-bg;
+    border: 1px solid $border-color;
+    cursor: pointer;
+    font-size: 0.825rem;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    &.justify-content-start{
+        justify-content: flex-start ;
+    }
+    &.align-items-center{
+        align-items: center;
+    }
+}
+.btn{
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    border-radius: 3px;
+    height: 30px;
+    &.feature-request{
+        &::before{
+            content: "";
+            height: 15px;
+            width: 15px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            background:url('./images/To-do.svg') no-repeat;
+        }
+    }
+}
+
+/* global css end */
+
+/* Status col css */
+.status-view{
+    flex-grow: 1;
+    font-size: 14px;
+    margin-top: 20px;
+    .status-col{
+        width:20%;
+        margin: 10px;
+        .user-name{
+            margin-bottom: 25px;
+        }
+        /*status icon css*/
+        .status-icon{
+            margin-bottom: 25px;
+            &.mb-0{
+                margin-bottom: 0;
+            }
+            &:before{
+                content: "";
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+                background: url('./images/Backlog.svg') no-repeat;
+            }
+            &.status_backlog{
+                &:before{
+                    background: url('./images/Backlog.svg') no-repeat;
+                }
+            }
+            &.status_todo{
+                &:before{
+                    background: url('./images/To-do.svg') no-repeat;
+                }
+            }
+            &.status_done{
+                &:before{
+                    background: url('./images/Done.svg') no-repeat;
+                }
+            }
+            &.status_in_progress{
+                &:before{
+                    background: url('./images/in-progress.svg') no-repeat;
+                }
+            }
+            &.status_canceled{
+                &:before{
+                    background: url('./images/Cancelled.svg') no-repeat;
+                }
+            }
+        }
+
+        /*status icon css*/
+        .priority-icon{
+            margin-bottom: 25px;
+            &.mb-0{
+                margin-bottom: 0;
+            }
+            &:before{
+                content: "";
+                width: 15px;
+                height: 15px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 10px;
+                background: url('./images/Img\ -\ High\ Priority.svg') no-repeat;
+            }
+            &.priority_urgent, &.priority_4{
+                &:before{
+                    background: url('./images/SVG\ -\ Urgent\ Priority\ colour.svg') no-repeat;
+                }
+            }
+            &.priority_high, &.priority_3{
+                &:before{
+                    background: url('./images/Img\ -\ High\ Priority.svg') no-repeat;
+                }
+            }
+            &.priority_low, &.priority_1{
+                &:before{
+                    background: url('./images/Img\ -\ Low\ Priority.svg') no-repeat;
+                }
+            }
+            &.priority_medium, &.priority_2{
+                &:before{
+                    background: url('./images/Img\ -\ Medium\ Priority.svg') no-repeat;
+                }
+            }
+            &.priority_no_priority, &.priority_0{
+                &:before{
+                    background: url('./images/No-priority.svg') no-repeat;
+                }
+            }
+        }
+    }
+    .card{
+        background-color: $white;
+        padding: 10px;
+        font-size: 0.825rem;
+        margin-bottom: 10px;
+        box-shadow: 2px 2px 2px $border-color;
+        border-radius: 4px;
+        .user-icon{
+            background-color: $primary-color;
+            color: $white;
+            height: 25px;
+            width: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-radius: 50%;
+        }
+        .card-title{
+            min-height: 50px;
+            font-size: 0.75rem;
+            line-height: 1.2;
+            font-weight: 500;
+            margin: 5px 0;
+        }
+        
+    }
+}
+
+
+/* display dropdown css */
+.filter-Dropdown{
+    position: relative;
+    font-size: .75rem;
+    background-color: $white;
+    padding: 20px;
+    margin: 0 -15px;
+    .toggle-btn{
+        padding: 5px 10px;
+        border-radius: 3px;
+        background-color: $white;
+        border: 1px solid $border-color;
+        &::before{
+            content: "";
+            width: 20px;
+            height: 16px;
+            display: inline-block;
+            margin-right: 10px;
+            background:url('./images/Display.svg') no-repeat;
+            vertical-align: middle;
+        }
+    }
+    .controls{
+        position: absolute;
+        top: 52px;
+        left: 18px;
+        padding: 10px 10px 0;
+        min-width: 200px;
+        background-color: $light-bg;
+        border-radius: 4px;
+        border: 1px solid $border-color;
+        .d-flex{
+            margin-bottom: 10px;
+            align-items: center;}
+        select{
+            padding: 3px;
+            background-color: $white;
+            border: 1px solid $border-color;
+            border-radius: 2px;
+        }
+    }
+}
